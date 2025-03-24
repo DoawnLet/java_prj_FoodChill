@@ -1,0 +1,164 @@
+/* RESET CƠ BẢN (nếu chưa có) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* CONTAINER CHÍNH CHỨA DANH SÁCH ĐƠN HÀNG */
+.orders-container {
+    max-width: 1200px;
+    margin: 80px auto 40px; /* chừa không gian cho navigation */
+    padding: 20px;
+    background-color: #fff; 
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* NẾU KHÔNG CÓ ĐƠN HÀNG NÀO */
+.empty-msg {
+    text-align: center;
+    padding: 40px;
+}
+.empty-msg h2 {
+    font-size: 20px;
+    color: #666;
+}
+
+/* MỖI ORDER là 1 "card" */
+.order {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fafafa;
+    transition: box-shadow 0.3s ease;
+}
+.order:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ORDER-INFO (nằm bên trên) */
+.order-info {
+    margin-bottom: 12px;
+}
+
+/* LINK BAO QUANH THÔNG TIN ORDER
+   (Nếu muốn link trông giống block "clickable") */
+.link-to-detail {
+    text-decoration: none;
+    color: inherit; /* giữ màu text gốc */
+    display: block; /* cho link chiếm toàn bộ vùng */
+}
+
+/* ORDER META THÔNG TIN ID, STATUS,... */
+.order-meta {
+    display: flex;
+    gap: 40px; /* khoảng cách giữa các cột ID, Status */
+    margin-bottom: 20px;
+}
+.order-id, .order-status {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* label cách value */
+}
+.order-id .label,
+.order-status .label {
+    font-weight: 600;
+    color: #2c3e50;
+    min-width: 80px;
+}
+.order-id .value,
+.order-status .value {
+    font-size: 14px;
+    color: #555;
+}
+
+/* DANH SÁCH MÓN ĂN TRONG ĐƠN HÀNG */
+.order-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+}
+.order-row:last-child {
+    border-bottom: none; /* bỏ border ở item cuối */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.food-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ẢNH MÓN ĂN */
+.food-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid #eee;
+}
+
+/* MÔ TẢ MÓN */
+.food-des {
+    display: flex;
+    flex-direction: column;
+}
+.food-name {
+    font-weight: 500;
+    color: #2c3e50;
+}
+.food-quantity {
+    font-size: 13px;
+    color: #555;
+}
+
+/* GIÁ TỪNG MÓN (UNIT PRICE) */
+.food-unit-price {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* TỔNG TIỀN (ORDER-TOTAL-COST) */
+.order-total-cost {
+    text-align: right;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+/* RESPONSIVE CHO MÀN HÌNH NHỎ */
+@media (max-width: 768px) {
+    .orders-container {
+        margin: 100px 10px 40px;
+        padding: 16px;
+    }
+
+    .order-meta {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .order-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .food-unit-price {
+        margin-top: 6px;
+    }
+}

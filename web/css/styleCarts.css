@@ -1,0 +1,329 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.cart-container {
+    max-width: 1200px;
+    margin: 20px auto 20px; /* Tăng margin-top để tránh bị navigation che */
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.cart-items {
+    margin-bottom: 30px;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr 1.5fr 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s;
+}
+
+.product:hover {
+    background: #f9f9f9;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-name {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.product-price {
+    color: #666;
+    font-weight: 500;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: rgb(44, 62, 80);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4px;
+}
+
+.quantity-btn:hover {
+    background: #ff0000;
+    transform: translateY(-2px);
+}
+
+.quantity-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.quantity-input:focus {
+    outline: none;
+    border-color: rgb(44, 62, 80);
+}
+
+.product-total {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.remove-btn {
+    background: rgb(44, 62, 80);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.remove-btn:hover {
+    background: #ff0000;
+    transform: translateY(-2px);
+}
+
+.remove-btn:active {
+    transform: translateY(0) scale(0.95);
+}
+
+.cart-summary {
+    max-width: 600px;
+    margin-left: auto;
+    padding: 25px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.coupon {
+    margin-bottom: 25px;
+}
+
+.coupon label {
+    display: block;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.coupon-input {
+    display: flex;
+    gap: 10px;
+}
+
+.coupon input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.coupon input:focus {
+    outline: none;
+    border-color: rgb(44, 62, 80);
+}
+
+.apply-coupon {
+    padding: 10px 20px;
+    background: rgb(44, 62, 80);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.apply-coupon:hover {
+    background: #ff0000;
+    transform: translateY(-2px);
+}
+
+.apply-coupon:active {
+    transform: translateY(0) scale(0.95);
+}
+
+
+
+/* --- Address Section Styles --- */
+.address-section {
+    /* Tạo nền (nếu muốn), hoặc giữ nguyên tùy ý */
+    background-color: #fff; 
+    
+    /* Tạo khoảng cách giữa address-section với nút Place Order hay các khối xung quanh */
+    margin-bottom: 20px; 
+    
+    /* Tạo khoảng trống bên trong khối, giúp các input không dính sát viền */
+    padding: 20px; 
+    
+    /* Tùy ý thêm border hay border-radius nếu thích */
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.address-section h5 {
+    margin-bottom: 16px; /* Khoảng trống dưới tiêu đề */
+    font-size: 18px; 
+    color: #2c3e50;
+}
+
+/* Mỗi khối .inforStreet, .inforWard, .inforDisctrict, .inforCity, .shipper-select */
+.address-section > div {
+    margin-bottom: 16px; /* Tạo khoảng cách dọc giữa các nhóm */
+}
+
+/* Label: cho xuống dòng + khoảng trống dưới label */
+.address-section label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+/* Input và Select đồng nhất styling */
+.address-section .input-section,
+.address-section .form-select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Nếu Ward, District bị disabled thì xám lại */
+.address-section .form-select:disabled {
+    background-color: #eee;
+    color: #999;
+}
+
+.total-section {
+    margin: 25px 0;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.total:last-child {
+    border-bottom: none;
+    font-size: 18px;
+}
+
+.checkout-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.proceed-checkout {
+    width: 100%;
+    padding: 15px;
+    background: rgb(44, 62, 80);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.proceed-checkout:hover {
+    background: #ff0000;
+    transform: translateY(-2px);
+}
+
+.proceed-checkout:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cart-container {
+        margin: 80px 10px 20px;
+        padding: 15px;
+    }
+
+    .product {
+        grid-template-columns: 80px 1fr;
+        gap: 15px;
+    }
+
+    .product > div {
+        grid-column: 2;
+    }
+
+    .image {
+        grid-row: span 4;
+        width: 80px;
+        height: 80px;
+    }
+
+    .remove-btn {
+        grid-column: 2;
+        justify-self: end;
+    }
+
+    .cart-summary {
+        max-width: 100%;
+        margin-top: 20px;
+        padding: 20px;
+    }
+
+    .total {
+        font-size: 14px;
+    }
+
+    .total:last-child {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,161 @@
+.profile-main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.history-order .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-food {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.order-food:hover {
+    transform: translateY(-2px);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.product-container {
+    display: grid;
+    gap: 15px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-details {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.order-summary {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    display: grid;
+    gap: 15px;
+}
+
+.order-status {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.status-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.9em;
+}
+
+.in-transit {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.product-address {
+    color: #666;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.order-actions {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.reorder-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.reorder-btn:hover {
+    background-color: #218838;
+}
+
+.reorder-btn:active {
+    background-color: #1e7e34;
+    transform: scale(0.98);
+}
+
+.profile-nav {
+    margin: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.nav-item.active {
+    background-color: #28a745;
+    color: white;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: inherit;
+}

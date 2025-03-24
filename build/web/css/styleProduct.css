@@ -1,0 +1,314 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 18, 2025, 8:22:23 PM
+    Author     : Asus
+*/
+.navbar-brand span {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+.search-box {
+    position: relative;
+}
+.search-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+.card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    border: none;
+    margin: 10px;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+.card-body {
+    padding: 1.25rem;
+}
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.product-price {
+    color: #e44d26;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.card-text {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+.card-footer {
+    padding: 1rem;
+}
+.cart-icon {
+    position: relative;
+}
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #dc3545;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+.hover-opacity:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+/* General styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+
+main {
+    flex: 1 0 auto;
+    padding: 40px 0;
+    background-color: #f8f9fa;
+}
+
+/* Button styles */
+.btn-outline-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Category title */
+.text-center.mb-4 {
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 2rem !important;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.text-center.mb-4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #0d6efd;
+}
+
+/* Slider styles */
+.carousel {
+    box-shadow: 0 4px 6px rgba(44, 62, 80, 0.1);
+    margin-bottom: 30px;
+}
+
+.carousel-inner {
+    border-radius: 10px;
+}
+
+.carousel-indicators button {
+    background-color: #2c3e50 !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+}
+
+/* Section title */
+h2.text-center {
+    color: #2c3e50;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+h2.text-center::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #e74c3c;
+}
+
+/* Product card styles */
+.card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(44, 62, 80, 0.1);
+    transition: all 0.3s ease;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.15);
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-title {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    color: #e74c3c;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Button styles */
+.card .btn-outline-primary {
+    color: #2c3e50 !important;
+    border-color: #2c3e50 !important;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+}
+
+.card .btn-outline-primary:hover {
+    color: #ffffff !important;
+    background-color: #2c3e50 !important;
+    border-color: #2c3e50 !important;
+}
+
+.card .btn-outline-primary i {
+    color: inherit;
+}
+
+/* Container spacing */
+.container.mt-4 {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Responsive grid spacing */
+.row-cols-1.row-cols-md-4.g-4 {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 1.5rem;
+}
+
+/* Product hover effect */
+.card .card-img-top {
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    opacity: 0.9;
+}
+
+/* Add to cart button hover animation */
+.card .btn-outline-primary:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 180px;
+    }
+
+    .container.mt-4 {
+        padding-top: 10px;
+    }
+
+    h2.text-center {
+        font-size: 1.5rem;
+    }
+}
+
+.introduction-card {
+    margin-top: 4rem;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+.introduction-card .card-body {
+    padding: 2rem;
+}
+
+.introduction-card h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.introduction-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Quantity input styling */
+.quantity-input {
+    transition: all 0.3s ease;
+    border: 1px solid #dee2e6;
+    padding: 0.5rem;
+}
+
+.quantity-input:hover {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+.quantity-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.4);
+    outline: none;
+}
+
+/* Remove spinner buttons for number input */
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.quantity-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
