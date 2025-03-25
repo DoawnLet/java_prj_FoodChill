@@ -38,6 +38,8 @@ public class MainServlet extends HttpServlet {
     private final String CUSTOMER_HISTORY_ORDER = "CustomerHistoryOrderServlet";
     private final String CUSTOMER_SEARCH = "CustomerSearchServlet";
 
+    private final String Paging = "FoodScrollServlet";
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -93,6 +95,8 @@ public class MainServlet extends HttpServlet {
                     url = CUSTOMER_HISTORY_ORDER;
                 } else if (action.equals("search")) {
                     url = CUSTOMER_SEARCH;
+                }else if(action.equals("scroll")){
+                    url = Paging;
                 } else if (button.equals("adminAction")) { //admin
                     session = request.getSession(true);
                     action = request.getParameter("action");

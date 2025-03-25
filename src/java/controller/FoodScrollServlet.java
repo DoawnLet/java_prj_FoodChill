@@ -5,15 +5,19 @@
  */
 package controller;
 
+import com.google.gson.Gson;
 import dao.FoodDAO;
 import dto.Food;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -37,13 +41,28 @@ public class FoodScrollServlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             int offset = Integer.parseInt(request.getParameter("offset"));
             int limit = Integer.parseInt(request.getParameter("limit"));
+            System.out.println("Offset: " + offset);
+            System.out.println("Limit: " + limit);
 
-            FoodDAO dao = FoodDAO.getInstance();
-            List<Food> foods = dao.getFoodsByOffset(offset, limit); // tạo method này
+            HttpSession session = request.getSession();
+            List<Food> list = (List<Food>) session.getAttribute("listFood");
+            System.out.println("List in FoodScroll: " + list);
+
+            List<Food> subList = new ArrayList<>();
+            if (list != null && !list.isEmpty()) {
+                int toIndex = Math.min(offset + limit, list.size());
+                if (offset < toIndex) {
+                    subList = list.subList(offset, toIndex);
+                } else {
+                    subList = Collections.emptyList();
+                }
+            }
+
+            System.out.println("Sub<ist in FoodScroll: " + subList);
 
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
-            new Gson().toJson(foods, response.getWriter());
+            new Gson().toJson(subList, response.getWriter());
         }
     }
 

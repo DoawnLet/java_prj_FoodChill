@@ -15,7 +15,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="stylesheet" href="css/styleCarts.css"> 
         <script defer src="js/cart.js"></script>
-        <script defer src="js/api.js"></script>
+       
 
     </head>
     <body>
@@ -151,5 +151,8 @@
                 </div>
             </div>
         </div>
+                            
+                            
+        <script defer src="js/api.js"></script>
     </body>
 </html>

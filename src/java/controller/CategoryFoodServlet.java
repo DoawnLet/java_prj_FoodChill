@@ -21,7 +21,6 @@ import javax.servlet.http.HttpSession;
  *
  * @author Asus
  */
-
 public class CategoryFoodServlet extends HttpServlet {
 
     /**
@@ -47,11 +46,14 @@ public class CategoryFoodServlet extends HttpServlet {
             // Lấy danh sách món ăn theo danh mục từ database
             FoodDAO dao = FoodDAO.getInstance();
             List<Food> listFood = dao.getCateFood(cateID);
-            
+
             HttpSession session = request.getSession(true);
             
+            System.out.println("List Food: + " + listFood);
+
             // Đưa dữ liệu vào request
             session.setAttribute("listFood", listFood);
+            request.setAttribute("cateId", cateID);
 
             // Chuyển hướng đến `categoryFood.jsp`
             request.getRequestDispatcher("categoryFood.jsp").forward(request, response);

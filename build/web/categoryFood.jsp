@@ -15,6 +15,7 @@
         <title>FoodChill</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script defer src="./js/category_food.js"></script>
+        <script defer src="./js/scroll_page.js"></script>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -33,45 +34,14 @@
         <jsp:include page="navigation.jsp"></jsp:include>
             <!--end nav-->
 
+
             <!-- Main Content -->
             <div class="container mt-4 flex-grow-1">
-                <!-- Products Grid -->
-                <div class="row row-cols-1 row-cols-md-4 g-4 mb-5">
-                    <!-- Product Card -->
-                <c:forEach var="food" items="${sessionScope.listFood}">
-                    <div class="col">
-                        <div class="card h-100">
-                            <img src="${food.img}" class="card-img-top" alt="${food.name}">
-                            <div class="card-body">
-                                <h5 class="card-title"><a href="MainServlet?action=category&foodId=${food.id}">${food.name}</a></h5>
-                                <p class="text-danger">${food.price} VND</p>
-                                <p class="card-text">${food.desc}</p>
-                            </div>
-                            <c:if test="${not empty sessionScope.USER}">
-                                <div class="card-footer bg-white border-top-0">
-
-                                    <div class="d-flex justify-content-center mb-2">
-                                        <input 
-                                            class="form-control quantity-input text-center quantity-value" 
-                                            style="width: 100px;"
-                                            data-food-id="${food.id}" 
-                                            name="quantity" 
-                                            type="number" 
-                                            value="1"
-                                            placeholder="Số lượng">
-                                    </div>
-
-                                    <button class="btn btn-outline-primary w-100 add-to-cart" type="button"
-                                            id="add-with-quantity" value="${food.id}">
-                                        <i class="fas fa-shopping-cart me-2"></i>Thêm vào giỏ
-                                    </button>
-
-                                </div>
-                            </c:if>
-                        </div>
-                    </div>
-                </c:forEach>
+                <div id="food-list" 
+                     class="row row-cols-1 row-cols-md-4 g-4 mb-5"
+                     data-cate-id="${cateID}">
             </div>
+            <div id="loading" class="text-center my-3" style="display: none;">Đang tải thêm món ăn...</div>
         </div>
         <!--end main content-->
 

@@ -237,10 +237,10 @@ public class FoodDAO {
         try {
             con = DBUtils.getConnection();
             if (con != null) {
-                String sql = "SELECT * FROM Food WHERE Name LIKE ? OR Description LIKE ?";
+                String sql = "SELECT * FROM Food WHERE Name LIKE ? ";
                 PreparedStatement ps = con.prepareStatement(sql);
                 ps.setString(1, "%" + keyword + "%");
-                ps.setString(2, "%" + keyword + "%");
+                
 
                 ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
@@ -290,6 +290,35 @@ public class FoodDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return list;
+    }
+
+    //Phân trang
+    public List<Food> getFoodsByOffset(String cateId, int offset, int limit) {
+        List<Food> list = new ArrayList<>();
+        String sql = "SELECT * FROM Food WHERE CateID = ? ORDER BY Food_ID OFFSET ? ROWS FETCH NEXT ? ROWS ONLY";
+
+        try (Connection con = DBUtils.getConnection();
+                PreparedStatement ps = con.prepareStatement(sql)) {
+            
+            ps.setString(1, cateId);
+            ps.setInt(2, offset);
+            ps.setInt(3, limit);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Food(
+                        rs.getString("Food_ID"),
+                        rs.getString("Name"),
+                        rs.getDouble("Price"),
+                        rs.getString("Description"),
+                        rs.getString("Image")
+                ));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return list;
     }
 

@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/ki_4/Projects_PRJ/Food-ChillCopy/web/js/homePage.js</file>
+            <file>file:/D:/ki_4/Projects_PRJ/Food-ChillCopy/web/js/category_food.js</file>
+            <file>file:/D:/ki_4/Projects_PRJ/Food-ChillCopy/src/java/controller/MainServlet.java</file>
+            <file>file:/D:/ki_4/Projects_PRJ/Food-ChillCopy/web/navigation.jsp</file>
+            <file>file:/D:/ki_4/Projects_PRJ/Food-ChillCopy/src/java/controller/CategoryFoodServlet.java</file>
+            <file>file:/D:/ki_4/Projects_PRJ/Food-ChillCopy/src/java/dao/FoodDAO.java</file>
+            <file>file:/D:/ki_4/Projects_PRJ/Food-ChillCopy/src/java/controller/FoodScrollServlet.java</file>
+            <file>file:/D:/ki_4/Projects_PRJ/Food-ChillCopy/src/java/controller/HomePageServlet.java</file>
+            <file>file:/D:/ki_4/Projects_PRJ/Food-ChillCopy/src/java/controller/CustomerSearchServlet.java</file>
+            <file>file:/D:/ki_4/Projects_PRJ/Food-ChillCopy/web/categoryFood.jsp</file>
+        </group>
     </open-files>
 </project-private>
